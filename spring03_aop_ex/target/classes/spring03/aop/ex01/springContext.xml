@@ -20,6 +20,9 @@
 		<aop:after-returning method="afterReturn" pointcut-ref="gugu"/>
 		
 		<aop:after-throwing method="afterThrowable" pointcut-ref="gugu" throwing="th"/>
+		
+		<aop:around method="aroundGugu" pointcut="execution(public String *.gugudan1())"/>
+		<aop:after-throwing method="afterThrowable1" pointcut="execution(public String *.gugudan1())" throwing="th"/>
 	</aop:aspect>
 </aop:config>
 </beans>

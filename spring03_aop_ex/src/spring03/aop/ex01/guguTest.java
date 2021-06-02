@@ -1,6 +1,7 @@
 package spring03.aop.ex01;
 
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,16 @@ public class guguTest {
 	@Autowired
 	ApplicationContext ctx;
 
+	@Ignore
 	@Test
 	public void test() {
 		Gugudan gugudan = ctx.getBean("gugudan",Gugudan.class);
 		System.out.println(gugudan.gugudan());
+	}
+	
+	@Test
+	public void test1() {
+		Gugudan gugudan = ctx.getBean("gugudan",Gugudan.class);
+		System.out.println(gugudan.gugudan1());
 	}
 }
