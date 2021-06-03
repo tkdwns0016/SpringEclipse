@@ -16,8 +16,10 @@
 	<bean id="sqlSessionFactoryBean"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<!-- mybatis주소를 넣어줌 -->
 		<property name="configLocation"
-			value="spring04/mybatis/ex01/mybatisConfig.xml"/>
+			value="spring04/mybatis/ex01/mybatisConfig.xml" />
+			<!-- Mapper의 위치를 적어줌  클래스의 . 은 *의폴더를 표시하므로 사이에 /를 대신한다. -->
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:spring04/mybatis/ex01/userMapper.xml</value>
@@ -25,8 +27,9 @@
 		</property>
 	</bean>
 
-<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
-</bean>
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
 
 </beans>
