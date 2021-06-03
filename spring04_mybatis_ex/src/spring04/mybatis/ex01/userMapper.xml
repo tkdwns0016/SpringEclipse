@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="userMapper">
+	<select id="selectAll" resultType="User">
+		select * from user
+	</select>
+
+	<select id="selectById" resultType="User">
+		select * from user where id=#{id}
+	</select>
+
+	<insert id="insertUser">
+		insert into user
+		values(#{id},#{userId},#{password},#{birthDate},#{phone},#{address},#{joinedDate})
+	</insert>
+
+	<update id="updateUser" parameterType="User">
+		update user set
+		user_id=#{userId},password=#{password},birth_date=#{birthDate},joined_date=#{joinedDate}
+		where id=#{id}
+	</update>
+
+	<delete id="deleteUser">
+		delete from user where id = #{id}
+	</delete>
+
+	
+	<select id="selectByPiece" resultType="User"> 
+	select * from user where user_id like concat('%',#{userId},'%')
+	</select>
+
+</mapper>
