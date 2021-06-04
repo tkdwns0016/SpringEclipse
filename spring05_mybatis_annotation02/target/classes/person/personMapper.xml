@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 연동하고자 하는 맵퍼인터페이스의 패키지명/인터페이스명 을 적어준다. -->
+    <mapper namespace="person.PersonMapper">
+    	<!-- 인터페이스의 메소드명과 id값을 일치 시켜야함 -->
+    	<select id="selectList" resultType="Person">
+    	select id,name,age from person
+    	</select>
+    </mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="user.UserMapper">
+    	<update id="updateUser" >
+    	update user set user_id=#{userId} where id=#{id}
+    	</update>
+    
+    	<delete id="deleteUser">
+    	delete from user where id=#{id}
+    	</delete>
+    	
+    	<select id="selectAll" resultType="User">
+    	select * from user;
+    	</select>
+    
+    
+    </mapper>
