@@ -1,6 +1,5 @@
 package mySpring.ex04;
 
-import org.springframework.stereotype.Component;
 
 
 //@스프링에 빈으로 등록하기 위한 어노테이션

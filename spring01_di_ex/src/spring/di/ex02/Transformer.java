@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Transformer {
-	@Value("Æ®·£½ºÆ÷¸Ó")
+	@Value("íŠ¸ëœìŠ¤í¬ë¨¸")
 	private String name;
-	@
+	
 	@Autowired
 	@Qualifier("missileAttack")
 	private Attack attack1;
@@ -21,7 +21,7 @@ public class Transformer {
 	
 	
 	public void fight() {
-		System.out.println("ÀÌ¸§ : "+name);
+		System.out.println("ì´ë¦„ : "+name);
 		attack1.attack();
 		attack2.attack();
 	}

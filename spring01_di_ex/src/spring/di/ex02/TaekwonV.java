@@ -11,7 +11,7 @@ public class TaekwonV {
 	private Attack attack1;
 	private Attack attack2;
 	
-	public TaekwonV(@Value("ÅÂ±ÇºêÀÌ") String name,@Autowired @Qualifier("kickAttack") Attack attack1,@Autowired @Qualifier("punchAttack") Attack attack2) {
+	public TaekwonV(@Value("íƒœê¶Œë¸Œì´") String name,@Autowired @Qualifier("kickAttack") Attack attack1,@Autowired @Qualifier("punchAttack") Attack attack2) {
 		this.name = name;
 		this.attack1 = attack1;
 		this.attack2 = attack2;
@@ -19,7 +19,7 @@ public class TaekwonV {
 	
 	
 	public void fight() {
-		System.out.println("ÀÌ¸§ : "+name);
+		System.out.println("ì´ë¦„ : "+name);
 		attack1.attack();
 		attack2.attack();
 	}

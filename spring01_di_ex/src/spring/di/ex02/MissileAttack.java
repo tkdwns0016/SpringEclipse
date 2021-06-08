@@ -7,7 +7,7 @@ public class MissileAttack implements Attack{
 
 	@Override
 	public void attack() {
-		System.out.println("¹Ì»çÀÏ ¾îÅÃ");
+		System.out.println("ë¯¸ì‚¬ì¼ ê³µê²©");
 	}
 
 }

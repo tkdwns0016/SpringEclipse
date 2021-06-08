@@ -7,7 +7,7 @@ public class PunchAttack implements Attack{
 
 	@Override
 	public void attack() {
-		System.out.println("ÆİÄ¡ ¾îÅÃ");
+		System.out.println("í€ì¹˜ ê³µê²©");
 	}
 
 }

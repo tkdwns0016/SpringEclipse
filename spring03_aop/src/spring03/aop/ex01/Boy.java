@@ -2,8 +2,8 @@ package spring03.aop.ex01;
 
 public class Boy {
 	public void doSomething() {
-		System.out.println("¹®À» ¿­°í Áı¿¡ µé¾î°£´Ù.");//°øÅë
-		System.out.println("Áı¿¡¼­ »¡·¡¸¦ ÇÑ´Ù."); //ÇÙ½É
-		System.out.println("¹®À» ´İ°í ÁıÀ» ³ª¿Â´Ù.");//°øÅë
+		System.out.println("ë¬¸ì„ ì—´ê³  ì§‘ì— ë“¤ì–´ê°„ë‹¤.");//ê³µí†µ
+		System.out.println("ë¼ë©´ì„ ë¨¹ëŠ”ë‹¤"); //í•µì‹¬
+		System.out.println("ë¬¸ì„ ë‹«ê³  ì§‘ì„ ë‚˜ì˜¨ë‹¤.");//ê³µí†µ
 	}
 }

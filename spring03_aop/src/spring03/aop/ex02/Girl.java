@@ -1,13 +1,13 @@
 package spring03.aop.ex02;
 
-//ÇÙ½É ±â´ÉÀ» °®Àº Å¬·¡½º
+//í•µì‹¬ ê¸°ëŠ¥ì„ ê°–ì€ í´ë˜ìŠ¤
 public class Girl {
 	public String doSomething() {
-//		System.out.println("¹®À» ¼¼°Ô Áı¿¡ µé¾î°£´Ù.");//°øÅë
-		System.out.println("Áı¿¡¼­ Æ¼ºñ¸¦ º»´Ù"); // ÇÙ½É
-//		System.out.println("¹®À» ´İ°í ÁıÀ» ³ª¿Â´Ù.");//°øÅë
+//		System.out.println("ë¬¸ì„ ì„¸ê²Œ ì§‘ì— ë“¤ì–´ê°„ë‹¤.");//ê³µí†µ
+		System.out.println("ì§‘ì—ì„œ í‹°ë¹„ë¥¼ ë³¸ë‹¤"); // í•µì‹¬
+//		System.out.println("ë¬¸ì„ ë‹«ê³  ì§‘ì„ ë‚˜ì˜¨ë‹¤.");//ê³µí†µ
 
-		// 1/2 È®·ü·Î ¿¹¿Ü¸¦ ¸¸µé¾îº½
+		// 1/2 í™•ë¥ ë¡œ ì˜ˆì™¸ë¥¼ ë§Œë“¤ì–´ë´„
 		int num = (int) (Math.random() * 2);
 		if (num == 0) {
 			throw new ArithmeticException();

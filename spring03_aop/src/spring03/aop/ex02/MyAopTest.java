@@ -16,7 +16,7 @@ public class MyAopTest {
 	@Autowired
 	ApplicationContext ctx;
 	
-	@Ignore // ÀÌ Å×½ºÆ®¸¦ ½ÇÇàÇÏÁö ¾Ê°Ô ÇÔ.
+	@Ignore // ì´ í…ŒìŠ¤íŠ¸ë¥¼ ì‹¤í–‰í•˜ì§€ ì•Šê²Œ í•¨.
 	@Test
 	public void test() {
 		Boy boy = ctx.getBean("boy",Boy.class);

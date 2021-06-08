@@ -5,34 +5,34 @@ import org.aspectj.lang.ProceedingJoinPoint;
 public class MyAspect {
 
 	public void beforeDoSomething() {
-		System.out.println("¹®À» ¼¼°Ô ¿­°í Áı¿¡ µé¾î°£´Ù.");
+		System.out.println("ë¬¸ì„ ì„¸ê²Œ ì—´ê³  ì§‘ì— ë“¤ì–´ê°„ë‹¤.");
 	}
 
 	public void afterDoSomething() {
-		System.out.println("¹®À» ´İ°í ÁıÀ» ³ª¿Â´Ù.");
+		System.out.println("ë¬¸ì„ ë‹«ê³  ì§‘ì„ ë‚˜ì˜¨ë‹¤.");
 	}
 
 	public String afterReturn(String msg) {
-		return "¿¡ÇÁÅÍ ¸®ÅÏ : " + msg;
+		return "ì—í”„í„° ë¦¬í„´ : " + msg;
 	}
 
 	public String afterThrowing(Throwable th) {
-		System.out.println("ÁıÀÌ ÅÍÁ³½´!!");
-		return "¿¹¿Ü ¹ß»ı";
+		System.out.println("ì§‘ì´ í„°ì¡ŒìŠˆ!!");
+		return "ì˜ˆì™¸ ë°œìƒ";
 	}
 
-	// ÇÙ½É±â´ÉÀ» °¨½Î¼­ ½ÇÇàÇÔ.
+	// í•µì‹¬ê¸°ëŠ¥ì„ ê°ì‹¸ì„œ ì‹¤í–‰í•¨.
 	public String myAround(ProceedingJoinPoint jp) {
-		//ÇÙ½É±â´ÉÀÇ ½ÇÇàÇÏ·Á´ø ¸Ş¼­µå
+		//í•µì‹¬ê¸°ëŠ¥ì˜ ì‹¤í–‰í•˜ë ¤ë˜ ë©”ì„œë“œ
 		try {
-			System.out.println("ºñÆ÷");
+			System.out.println("ë¹„í¬");
 			String result = (String)jp.proceed();
-			System.out.println("¿¡ÇÁÅÍ");
-			System.out.println("joinPoint proceed() °á°ú : "+result); //¿¡ÇÁÅÍ ¸®ÅÏ
+			System.out.println("ì—í”„í„°");
+			System.out.println("joinPoint proceed() ê²°ê³¼ : "+result); //ì—í”„í„° ë¦¬í„´
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
-			System.out.println("¿¡ÇÁÅÍ ¾²·Î¿ì");
+			System.out.println("ì—í”„í„° ì“°ë¡œìš°");
 		}
 		return "test";
 	}

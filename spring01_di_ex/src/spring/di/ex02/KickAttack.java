@@ -7,7 +7,7 @@ public class KickAttack implements Attack{
 
 	@Override
 	public void attack() {
-		System.out.println("Å± ¾îÅÃ");
+		System.out.println("ë°œì°¨ê¸° ê³µê²©");
 	}
 
 }

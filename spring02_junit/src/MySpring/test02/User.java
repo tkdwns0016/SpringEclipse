@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class User {
-	@Value("∞°∑ª")
+	@Value("ÎçîÏ°∞ÏùÄ")
 	private String name;
 	@Autowired
 	@Qualifier("phone")

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Gundam {
-	@Value("∞«¥„")
+	@Value("Í±¥Îã¥")
 	private String name;
 	
 	@Autowired
@@ -19,7 +19,7 @@ public class Gundam {
 	private Attack attack2;
 	
 	public void fight() {
-		System.out.println("¿Ã∏ß : "+name);
+		System.out.println("Ïù¥Î¶Ñ : "+name);
 		attack1.attack();
 		attack2.attack();
 	}

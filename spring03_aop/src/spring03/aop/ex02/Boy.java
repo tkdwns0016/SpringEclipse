@@ -2,9 +2,7 @@ package spring03.aop.ex02;
 
 public class Boy {
 	public String doSomething() {
-//		System.out.println("¹®À» ¿­°í Áý¿¡ µé¾î°£´Ù.");//°øÅë
-		System.out.println("Áý¿¡¼­ »¡·¡¸¦ ÇÑ´Ù."); //ÇÙ½É
-//		System.out.println("¹®À» ´Ý°í ÁýÀ» ³ª¿Â´Ù.");//°øÅë
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½."); //ï¿½Ù½ï¿½
 		
 		return "I am a boy";
 	}

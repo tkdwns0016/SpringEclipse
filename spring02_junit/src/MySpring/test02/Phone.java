@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Phone {
-	@Value("�Ｚ")
+	@Value("삼성")
 	private String brand;
 	
 	@Value(value = "200000")

@@ -14,45 +14,45 @@ import MySpring.test02.User;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:mySpring/test02/springContext.xml")
 public class MyTest01 {
-	// ´ÜÀ§ Å×½ºÆ® µµ±¸!
-	// ´ÜÀ§º° ±â´ÉÀ» Å×½ºÆ®ÇÏ±â À§ÇÑ Å¬·¡½º
-	// daoÀÇ select()¸¦ ¸¸µé¾ú´Ù¸é ÀÌ¾ÆÀÌ¸¸ Å×½ºÆ®ÇÏ±â À§ÇØ »ç¿ë.
+	// ë‹¨ìœ„ í…ŒìŠ¤íŠ¸ ë„êµ¬!
+	// ë‹¨ìœ„ë³„ ê¸°ëŠ¥ì„ í…ŒìŠ¤íŠ¸í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
+	// daoì˜ select()ë¥¼ ë§Œë“¤ì—ˆë‹¤ë©´ ì´ì•„ì´ë§Œ í…ŒìŠ¤íŠ¸í•˜ê¸° ìœ„í•´ ì‚¬ìš©.
 
 	@Autowired
 	User user;
 
-	// ¸Ş¼­µå¿¡ Test¾î³ëÅ×ÀÌ¼ÇÀ» ºÙ¿©¼­ ½ÇÇàÇÑ´Ù.
+	// ë©”ì„œë“œì— Testì–´ë…¸í…Œì´ì…˜ì„ ë¶™ì—¬ì„œ ì‹¤í–‰í•œë‹¤.
 	@Test
 	public void test() {
-		assertNotNull(user); // nullÀÎÁö?
-		assertEquals(200000,user.getPhone().getPrice()); // °°ÀºÁö ºñ±³
-		assertNotEquals(20000, user.getPhone().getPrice()); // ´Ù¸¥Áö ºñ±³
-		
+		assertNotNull(user); // nullì¸ì§€?
+		assertEquals(200000, user.getPhone().getPrice()); // ê°™ì€ì§€ ë¹„êµ
+		assertNotEquals(20000, user.getPhone().getPrice()); // ë‹¤ë¥¸ì§€ ë¹„êµ
+
 	}
-	
+
 	@After
 	public void testAfter() {
 		System.out.println(user.getPhone().getBrand());
 	}
 
 	/*
-	 * junit ÀÇ ¾î³ëÅ×ÀÌ¼Ç
+	 * junit ì˜ ì–´ë…¸í…Œì´ì…˜
 	 * 
-	 * @Test : Å×½ºÆ® ÇÏ°íÀÚ ÇÏ´Â ¸Ş¼­µå¿¡ ¼±¾ğ
+	 * @Test : í…ŒìŠ¤íŠ¸ í•˜ê³ ì í•˜ëŠ” ë©”ì„œë“œì— ì„ ì–¸
 	 * 
-	 * @Before : @Test ¾î³ëÅ×ÀÌ¼ÇÀÌ ½ÇÇàµÇ±â Àü¿¡ ½ÇÇàµÇ´Â ¸Ş¼­µå
+	 * @Before : @Test ì–´ë…¸í…Œì´ì…˜ì´ ì‹¤í–‰ë˜ê¸° ì „ì— ì‹¤í–‰ë˜ëŠ” ë©”ì„œë“œ
 	 * 
-	 * @After : @Test ¾î³ëÅ×ÀÌ¼ÇÀÌ ¸ÕÀú ½ÇÇàµÇ°í ´ÙÀ½ ½ÇÇàµÇ´Â ¸Ş¼­µå
+	 * @After : @Test ì–´ë…¸í…Œì´ì…˜ì´ ë¨¼ì € ì‹¤í–‰ë˜ê³  ë‹¤ìŒ ì‹¤í–‰ë˜ëŠ” ë©”ì„œë“œ
 	 * 
-	 * @BeforeClass : µü ÇÑ¹ø ¸ğµç Å×½ºÆ® Àü¿¡ ½ÇÇàµÇ´Â ¾ÆÀÌ
+	 * @BeforeClass : ë”± í•œë²ˆ ëª¨ë“  í…ŒìŠ¤íŠ¸ ì „ì— ì‹¤í–‰ë˜ëŠ” ì•„ì´
 	 * 
-	 * @AfterClass : ¸ğµç Å×½ºÆ®°¡ ½ÇÇàµÇ°í ³ª¼­ µü ÇÑ¹ø ½ÇÇàµÇ´Â ¾ÆÀÌ
+	 * @AfterClass : ëª¨ë“  í…ŒìŠ¤íŠ¸ê°€ ì‹¤í–‰ë˜ê³  ë‚˜ì„œ ë”± í•œë²ˆ ì‹¤í–‰ë˜ëŠ” ì•„ì´
 	 * 
 	 * 
 	 * spring-test
 	 * 
 	 * @RunWith(SpringJUnit4ClassRunner.class)
 	 * 
-	 * @ContextConfiguration(location="½ºÇÁ¸µ ¼³Á¤ ÆÄÀÏ")
+	 * @ContextConfiguration(location="ìŠ¤í”„ë§ ì„¤ì • íŒŒì¼")
 	 */
 }

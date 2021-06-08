@@ -1,14 +1,12 @@
 package mySpring.ex04;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Gundam {
 	
-	@Value("∞«¥„")
+	@Value("Í±¥Îã¥")
 	private String name;
 	
 //	@Autowired
@@ -17,7 +15,7 @@ public class Gundam {
 	
 	
 	public void fight(){
-		System.out.println(name+"¿Ã");
+		System.out.println(name+"Ïù¥");
 //		attack.attack();
 	}
 }
