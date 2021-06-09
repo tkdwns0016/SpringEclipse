@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 public interface PersonMapper {
-	//¸¶ÀÌ¹ÙÆ¼½º annotation¹æ½ÄÀ¸·Î Äõ¸®¹® ÀÛ¼ºÇÏ±â
+	//ë§ˆì´ë°”í‹°ìŠ¤ annotationë°©ì‹ìœ¼ë¡œ ì¿¼ë¦¬ë¬¸ ì‘ì„±í•˜ê¸°
 	@Insert("insert into person values(#{id},#{name},#{age})")
 	public void insertPerson(Person person);
 	

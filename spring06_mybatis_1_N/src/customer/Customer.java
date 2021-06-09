@@ -4,7 +4,7 @@ import java.util.List;
 
 import order.Order;
 
-//µ¥ÀÌÅÍº£ÀÌ½º¿¡ µé¾îÀÖ´Â °ªÀ» Á¶ÀÎÇØ¼­ ÇÏ³ªÀÇ °´Ã¼¾È¿¡ ´Ù ³Ö¾îº¸ÀÚ
+//ë°ì´í„°ë² ì´ìŠ¤ì— ë“¤ì–´ìˆëŠ” ê°’ì„ ì¡°ì¸í•´ì„œ í•˜ë‚˜ì˜ ê°ì²´ì•ˆì— ë‹¤ ë„£ì–´ë³´ì
 public class Customer {
 	private int id;
 	private String name;

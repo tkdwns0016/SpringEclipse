@@ -22,12 +22,12 @@ public class MybatisTest {
 	@Test
 	public void test() {
 //		for(int i=0; i<5; i++) {
-//			personMapper.insertPerson(new Person(0, "±¸±¸ÄÜ"+i, i));
+//			personMapper.insertPerson(new Person(0, "ë•¡ë•¡ì´"+i, i));
 //		}
 //		assertNotNull(personMapper);
-//		personMapper.insertPerson(new Person(0, "±Ô±Ô", 0));
+//		personMapper.insertPerson(new Person(0, "ì½©ì½©ì´", 0));
 //		personMapper.delete(1);
-//		System.out.println(personMapper.update(new Person(2, "Ä¼Ä¼", 50)));
+//		System.out.println(personMapper.update(new Person(2, "ë•¡ë•¡ì´00", 50)));
 //		List<Person> people = personMapper.selectList();
 //		for(Person person : people) {
 //			System.out.println(person.getName());

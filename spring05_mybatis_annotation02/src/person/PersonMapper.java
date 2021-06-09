@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-//ºó ½ºÄµÀ¸·Î @Mapper ¾î³ëÅ×ÀÌ¼ÇÀ» ½ºÄµÇØ°¨.
+//ë¹ˆ ìŠ¤ìº”ìœ¼ë¡œ @Mapper ì–´ë…¸í…Œì´ì…˜ì„ ìŠ¤ìº”í•´ê°.
 @Mapper
 public interface PersonMapper {
-	//¸¶ÀÌ¹ÙÆ¼½º annotation¹æ½ÄÀ¸·Î Äõ¸®¹® ÀÛ¼ºÇÏ±â
+	//ë§ˆì´ë°”í‹°ìŠ¤ annotationë°©ì‹ìœ¼ë¡œ ì¿¼ë¦¬ë¬¸ ì‘ì„±í•˜ê¸°
 	@Insert("insert into person values(#{id},#{name},#{age})")
 	public void insertPerson(Person person);
 	
@@ -25,7 +25,7 @@ public interface PersonMapper {
 //	@Select("select id, name, age from person")
 //	public List<Person> selectList();
 	
-	//xml ÆÄÀÏ·Î Äõ¸®¸¦ ±¸Çö
+	//xml íŒŒì¼ë¡œ ì¿¼ë¦¬ë¥¼ êµ¬í˜„
 	public List<Person> selectList();
 	
 	@Select("select * from person limit #{startRow},#{cnt}")

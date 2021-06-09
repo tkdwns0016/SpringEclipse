@@ -7,15 +7,15 @@ import comment.Comment;
 
 @Mapper
 public interface BoardWithComment {
-	public Board selectBoardWithComment(int id); //°Ô½Ã±Û Á¶È¸ 
+	public Board selectBoardWithComment(int id); //ê²Œì‹œê¸€ ì¡°íšŒ 
 	
-	public void deleteContent(int id); //°Ô½Ã±Û »èÁ¦
+	public void deleteContent(int id); //ê²Œì‹œê¸€ ì‚­ì œ
 	
-	public int insertBoard(Board board); //°Ô½Ã±Û »ðÀÔ
+	public int insertBoard(Board board); //ê²Œì‹œê¸€ ì‚½ìž…
 	
-	public int updateBoardContent(Board board); //°Ô½Ã±Û ¼öÁ¤
+	public int updateBoardContent(Board board); //ê²Œì‹œê¸€ ìˆ˜ì •
 	
-	public void deleteCommentByContentId(int id); // ÄÚ¸àÆ® »èÁ¦
+	public void deleteCommentByContentId(int id); // ì½”ë©˜íŠ¸ ì‚­ì œ
 	
 	public int insertComment(Comment comment);
 	

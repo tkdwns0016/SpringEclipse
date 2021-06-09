@@ -34,7 +34,7 @@ public class OrderTest {
 		Customer c = customerWithOrders.selectCustomerWithOrders(3);
 		System.out.println(c.getId());
 		System.out.println(c.getName());
-		System.out.println("-----ÁÖ¹® ³»¿ª-----");
+		System.out.println("-----ì£¼ë¬¸ ë‚´ì—­-----");
 		for(Order o : c.getOrderList()) {
 			System.out.println(o.getId());
 			System.out.println(o.getName());
@@ -46,10 +46,10 @@ public class OrderTest {
 	@Ignore
 	@Test
 	public void insertTest() {
-		Order order = new Order(0, 2, "°úÀÚ", LocalDateTime.now());
+		Order order = new Order(0, 2, "ê³¼ì", LocalDateTime.now());
 		
 		int affectedRow = customerWithOrders.insertOrder(order);
-		System.out.println("Àû¿ëµÈ ÁÙ ¼ö"+affectedRow);
+		System.out.println("ì ìš©ëœ ì¤„ ìˆ˜"+affectedRow);
 		System.out.println(order);
 	}
 	
@@ -58,7 +58,7 @@ public class OrderTest {
 		try {
 			customerService.deleteCustomerAndOrders(3);
 		} catch (Exception e) {
-			System.out.println("¿¹¿Ü");
+			System.out.println("ì˜ˆì™¸");
 			e.printStackTrace();
 		}
 	}

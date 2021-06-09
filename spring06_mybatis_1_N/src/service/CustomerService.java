@@ -12,7 +12,7 @@ public class CustomerService {
 	@Autowired
 	CustomerWithOrders customerWithOrders;
 	
-	@Transactional(rollbackFor = Exception.class) //Æ®·£Á§¼ÇÀ» ¼³Á¤ÇÏ°íÀÚ ÇÏ´Â ¸Ş¼­µå¿¡ Àû¿ë
+	@Transactional(rollbackFor = Exception.class) //íŠ¸ëœì ì…˜ì„ ì„¤ì •í•˜ê³ ì í•˜ëŠ” ë©”ì„œë“œì— ì ìš©
 	public int deleteCustomerAndOrders(int customerId) throws Exception {
 		customerWithOrders.deleteCustomer(customerId);
 		int num =1;

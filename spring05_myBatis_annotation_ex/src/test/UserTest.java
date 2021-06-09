@@ -29,14 +29,14 @@ public class UserTest {
 	@Test
 	public void test() {
 //		assertNotNull(userMapper);
-//		System.out.println(userMapper.insertUser(new User(0,"±è³×ÀÓ", "151848", LocalDate.parse("2021-02-02"), "01048484848", "ÇÏ´Ã", LocalDateTime.parse("2021-06-04T13:17:13"))));
+//		System.out.println(userMapper.insertUser(new User(0,"ê¹€ë„¤ìž„", "151848", LocalDate.parse("2021-02-02"), "01048484848", "í•˜ëŠ˜", LocalDateTime.parse("2021-06-04T13:17:13"))));
 //		List<User> userList = userMapper.selectAll();
 //		for(User user : userList) {
 //			System.out.println(user.getUserId());
 //		}
 //		System.out.println(userMapper.deleteUser(6));
-//		System.out.println(userMapper.updateUser(new User(4, "±èÄíÄí", null, LocalDate.parse("2011-12-01"), null, "¼­¿ïÆ¯º°½Ã", LocalDateTime.now())));
-//		System.out.println(userMapper.updateUser(new User(3, "¾Ë¸®½ºÅ¸", null, null, null, null, null)));
+//		System.out.println(userMapper.updateUser(new User(4, "ê¹€ì¿ ì¿ ", null, LocalDate.parse("2011-12-01"), null, "ì„œìš¸íŠ¹ë³„ì‹œ", LocalDateTime.now())));
+//		System.out.println(userMapper.updateUser(new User(3, "ì•Œë¦¬ìŠ¤íƒ€", null, null, null, null, null)));
 		List<User> userList = userService.selectAll();
 		for(User user : userList) {
 			System.out.println(user);

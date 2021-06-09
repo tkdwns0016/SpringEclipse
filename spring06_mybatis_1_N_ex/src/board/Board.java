@@ -1,54 +1,67 @@
-package board;
+package test;
+
+import static org.junit.Assert.assertNotNull;
 
 import java.time.LocalDate;
-import java.util.List;
 
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import board.Board;
 import comment.Comment;
+import mapper.BoardWithComment;
+import service.BoardService;
 
-public class Board {
-	private int id;
-	private String content;
-	private LocalDate writeDate;
-	private List<Comment> commentList;
-	public Board(int id, String content, LocalDate writeDate) {
-		super();
-		this.id = id;
-		this.content = content;
-		this.writeDate = writeDate;
-	}
-	public Board() {
-		super();
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public LocalDate getWriteDate() {
-		return writeDate;
-	}
-	public void setWriteDate(LocalDate writeDate) {
-		this.writeDate = writeDate;
-	}
-	public List<Comment> getCommentList() {
-		return commentList;
-	}
-	public void setCommentList(List<Comment> commentList) {
-		this.commentList = commentList;
-	}
-	@Override
-	public String toString() {
-		return "Board [id=" + id + ", content=" + content + ", writeDate=" + writeDate + ", commentList=" + commentList
-				+ "]";
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:config/springContext.xml")
+public class BoardTest {
+
+	@Autowired
+	BoardWithComment bwc;
+	
+	@Autowired
+	BoardService bs;
+	
+	@Ignore
+	@Test
+	public void test() {
+//		assertNotNull(bwc);
+		Board b = bwc.selectBoardWithComment(1);
+		System.out.println(b.getId());
+		System.out.println(b.getContent());
+		System.out.println(b.getWriteDate());
+		System.out.println("------댓글------");
+		for(Comment c : b.getCommentList()) {
+			System.out.println(c.getId());
+			System.out.println(c.getCommentContent());
+			System.out.println(c.getWriteDate());
+			System.out.println("----------");
+		}
 	}
 	
+	@Test
+	public void test1() {
+//		assertNotNull(bs);
+		//-------------------
+//		try {
+//			bs.deleteBoardAndComment(1);
+//		} catch (Exception e) {
+//			System.out.println("예외");
+//			e.printStackTrace();
+//		}
+		//-------------------
+//		System.out.println(bs.insertBoard(new Board(1,"사랑과전쟁", LocalDate.now())));
+		//-------------------
+//		System.out.println(bs.updateBoardContent(new Board(2, "사과나무 사랑걸렸네",null)));
+		//-------------------
+//		System.out.println(bs.insertContent(new Comment(0, 3, "부자들의 삶이란 .", null)));
+		
+		
+		
+	}
 	
-
 }
