@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -41,9 +42,28 @@ public class UserController {
 		
 		//넘어온 데이터를 service를 이용하여 DB에 넣는다
 		User resultUser = userService.joinUser(user);
-		
+		model.addAttribute("whatDid","수정");
 		//결과 화면으로 추가된 데이타를 보여주자
 		model.addAttribute("resultUser", resultUser);
+		
+		return "result";
+	}
+	
+	@GetMapping("/update")
+	public String showUserUpdateForm(Model model, int id) {
+		
+		User user = userService.getUserById(id);
+		
+		model.addAttribute("user",user);
+		
+		return "updateForm";
+	}
+	
+	@PostMapping("/update")
+	public String updateUser(Model model, User user) {
+		User resultUser = userService.updateUser(user);
+		model.addAttribute("whatDid","수정");
+		model.addAttribute("resultUser",resultUser);
 		
 		return "result";
 	}

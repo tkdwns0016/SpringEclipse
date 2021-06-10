@@ -13,6 +13,7 @@ public class User {
 	private LocalDate birthDate;
 	private String phone;
 	private String address;
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime joinedDate;
 	public User(int id, String userId, String password, LocalDate birthDate, String phone, String address,
 			LocalDateTime joinedDate) {

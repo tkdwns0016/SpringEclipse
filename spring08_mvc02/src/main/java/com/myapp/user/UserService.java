@@ -26,4 +26,22 @@ public class UserService {
 			return null;
 		}
 	}
+	
+	//유저를 id로 조회하는 메서드
+	public User getUserById(int id) {
+		return userMapper.selectOneById(id);
+	}
+	
+	//유저 내용을 수정하는 메서드
+	public User updateUser(User user) {
+		int affectedRow = userMapper.updateUser(user);
+		if(affectedRow== 1) {
+			return new User(user.getId(),user.getUserId(),user.getPassword(),user.getBirthDate(),user.getPhone(),user.getAddress(),user.getJoinedDate());
+		}else {
+			return null;
+		}
+			
+	}
+	
+	
 }
