@@ -11,7 +11,7 @@
 <body>
 	<h1>마블 영화 리스트</h1>
 	<a href="/marvel/insert">영화 추가하기</a>
-	
+	<a href="/marvel/movieList">마블 영화 리스트로 가기</a>
 	<c:forEach items="${marvelList }" var="marvel">
 	<div>
 	영화 번호 : ${marvel.marvelId }<br>
@@ -32,6 +32,10 @@
 	<a href="/marvel/delete?marvelId=${marvel.marvelId }">삭제</a>
 	<hr>
 	</div>
+	</c:forEach>
+		
+	<c:forEach var="num" begin="1" end="${ showByPage}">
+		<a href="/marvel/list?page=${num }">${num}</a>
 	</c:forEach>
 </body>
 </html>

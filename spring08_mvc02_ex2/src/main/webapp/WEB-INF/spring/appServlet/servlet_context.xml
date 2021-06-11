@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- IRVR - 뷰리졸버 -->
+	<!-- prefix의 밸류를 지정함으로써 주소창에 jsp파일의 루트를 적지않아도 됨 -->
+	<!-- suffix의 밸류를 지정함으로써 콘트롤러의 리턴값인 jsp파일명 뒤에 확장자명을 적지 않아도 됨 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 콘트롤러를 스캔하기 위함, 필터는 한가지만 가능, exclude 서비스 어노테이션은 받지않음. -->
+	<context:component-scan base-package="marvel">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+	</context:component-scan>
+
+
+	<!-- 자동으로 전달받은 파라미터값을 객체에 넣어주는 것. -->
+	<mvc:annotation-driven />
+	
+</beans>

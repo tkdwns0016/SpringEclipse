@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+h1 {
+	text-align: center
+}
+
+div.container {
+	width: 400px;
+	margin: 0 auto;
+}
+
+hr {
+	width: 300px
+}
+
+section {
+	width: 300px;
+	border: 1px soild #ccc;
+	padding: 5px;
+	margin: 5px auto 0 auto;
+}

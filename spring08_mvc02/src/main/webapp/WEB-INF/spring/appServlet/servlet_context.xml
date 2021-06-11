@@ -19,6 +19,9 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
+	<!-- resource 관련 애들은 바로 서버안쪽의 특정 폴더에 맵핑되도록 설정. -->
+	<!-- js,css,html과 같은 정적 파일을 맵핑 시켜줌 -->
+	<mvc:resources location="/resources/static/css/" mapping="/resources/css/**"/>
 	
 	<!-- 파라미터의 값을 자동으로 객체로 넣어주기 위해 -->
 	<mvc:annotation-driven/>

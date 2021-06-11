@@ -54,4 +54,21 @@ public class MarvelService {
 		}
 	}
 	
+	public List<Marvel> selectList(int pageNum){
+		int startNum = (pageNum-1)*3;
+		int endNum = 3;
+		
+		List<Marvel> marvelList = marvelMapper.showSelect(startNum, endNum);
+		
+		return marvelList;
+	}
+	
+	public List<Movie> selectMovieList(int pageNum){
+		int startNum = (pageNum-1)*5;
+		int endNum = 5;
+		
+		List<Movie> movieList = marvelMapper.showMovieSelect(startNum, endNum);
+		
+		return movieList;
+	}
 }
