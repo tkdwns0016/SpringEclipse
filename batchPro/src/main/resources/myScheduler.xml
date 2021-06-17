@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 주기적으로 실행할 job을 등록하자. class = JDFB로 자동완성 = JobDetailFactoryBean -->
+	<bean id="myJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<!-- 주기적으로 실행할 클래스를 속성으로 넣어줌.(우리가 만든 잡!) -->
+		<property name="jobClass" value="batchPro.batchPro.MyJob"/>
+	</bean>
+	
+	<!-- 얼마 간격으로 할지 패턴을 적용함. class = CTFB로 자동완성 = CronTriggerFactoryBean -->
+	<bean id="myJobTF" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<!-- 어떠한 일을 할지 -->
+		<property name="jobDetail" ref="myJob"/>
+		
+		<!--  반복 주기 설정 -->
+		<property name="cronExpression" value="1 * * * * ?"/>
+	</bean>
+	
+
+	<context:property-placeholder location="classpath:/mysql_db.properties"/>
+	
+	
+	<!-- 스케쥴러를 실행시켜주는 아이를 빈으로 등록 class = SFB로 자동완성 = SchedulerFactoryBean -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers" ref="myJobTF"></property>
+	</bean>
+	<!-- 스프링 jdbc연결 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driverClass}"></property>
+		<property name="url" value="${db.url}"></property>
+		<property name="username" value="${db.username}"></property>
+		<property name="password" value="${db.password}"></property>
+	</bean>
+	
+	<!-- dataSource , 마이바티스 빈을 만들어야함. -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpath:/mybatis_config.xml"/>
+	</bean>
+	
+	<!-- 매퍼 연결 -->
+	<mybatis-spring:scan base-package="emp"/>
+</beans>
